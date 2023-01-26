@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-01-26T17:56:11 EET" name="Command line suite" finished-at="2023-01-26T17:56:33 EET" duration-ms="21861">
+    <groups>
+    </groups>
+    <test started-at="2023-01-26T17:56:11 EET" name="Command line test" finished-at="2023-01-26T17:56:33 EET" duration-ms="21861">
+      <class name="tests.SearchGoogleTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SearchGoogleTest@18bf3d14]" started-at="2023-01-26T17:56:11 EET" name="setUp" finished-at="2023-01-26T17:56:25 EET" duration-ms="13618" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="searchGoogleTest1()[pri:0, instance:tests.SearchGoogleTest@18bf3d14]" started-at="2023-01-26T17:56:25 EET" name="searchGoogleTest1" finished-at="2023-01-26T17:56:33 EET" duration-ms="8116" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchGoogleTest1 -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:tests.SearchGoogleTest@18bf3d14]" started-at="2023-01-26T17:56:33 EET" name="getResult" finished-at="2023-01-26T17:56:33 EET" duration-ms="90" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+      </class> <!-- tests.SearchGoogleTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
+</testng-results>

@@ -22,22 +22,22 @@ public class SearchResultPage extends BasePage {
     /********************************* Search Result Page Functions ************************************/
 
     public boolean isNumberOfResultsElementVisible(){
-        return isWebElementVisible(numberOfResultsElement,driver);
+        return isWebElementVisible(numberOfResultsElement);
     }
 
     public void switchToResultPageByNumber(String pageNum){
         By page=By.xpath("//a[@aria-label='Page "+pageNum+"']");
-        scrollToWebElement(page,driver);
-        clickOnWebElement(page,driver);
+        scrollToWebElement(page);
+        clickOnWebElement(page);
     }
 
     public int numberOfResults(){
-        waitUntilWebElementIsVisible(resultsElements,driver);
+        waitUntilWebElementIsVisible(resultsElements);
         return driver.findElements(resultsElements).size();
     }
 
     public boolean isSearchSuggestionUnique(){
-        waitUntilWebElementIsVisible(searchSuggestionsElements,driver);
+        waitUntilWebElementIsVisible(searchSuggestionsElements);
         List<WebElement> suggestions=driver.findElements(searchSuggestionsElements);
         int occurrences=0;
         for(int i=0;i<suggestions.size();i++){

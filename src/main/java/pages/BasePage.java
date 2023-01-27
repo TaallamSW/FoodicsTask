@@ -26,13 +26,13 @@ public class BasePage {
     /********************************* Base Page functions ***********************************/
 
     public SearchResultPage enterTextInSearchBar(String text){
-        enterTextInWebElementAndThenPressEnter(searchTextField,driver,text);
+        enterTextInWebElementAndThenPressEnter(searchTextField,text);
         return new SearchResultPage(driver);
     }
 
     /********************************* General functions *************************************/
 
-    public void waitUntilWebElementIsVisible(By element, WebDriver driver){
+    public void waitUntilWebElementIsVisible(By element){
         WebDriverWait wait=new WebDriverWait(driver,timeOut);
         try{
             wait.until(ExpectedConditions.visibilityOfElementLocated(element));
@@ -42,30 +42,30 @@ public class BasePage {
         }
     }
 
-    public  void clickOnWebElement(By element, WebDriver driver){
-        waitUntilWebElementIsVisible(element,driver);
+    public  void clickOnWebElement(By element){
+        waitUntilWebElementIsVisible(element);
         driver.findElement(element).click();
     }
 
-    public void enterTextInWebElement(By element,WebDriver driver,String text){
-        waitUntilWebElementIsVisible(element,driver);
+    public void enterTextInWebElement(By element,String text){
+        waitUntilWebElementIsVisible(element);
         driver.findElement(element).clear();
         driver.findElement(element).sendKeys(text);
     }
 
-    public void enterTextInWebElementAndThenPressEnter(By element,WebDriver driver,String text){
-        waitUntilWebElementIsVisible(element,driver);
+    public void enterTextInWebElementAndThenPressEnter(By element,String text){
+        waitUntilWebElementIsVisible(element);
         driver.findElement(element).clear();
         driver.findElement(element).sendKeys(text);
         driver.findElement(element).sendKeys(Keys.ENTER);
     }
 
-    public String getWebElementText(By element,WebDriver driver) {
-        waitUntilWebElementIsVisible(element, driver);
+    public String getWebElementText(By element) {
+        waitUntilWebElementIsVisible(element);
         return driver.findElement(element).getText();
     }
 
-    public  boolean isWebElementVisible(By element,WebDriver driver){
+    public  boolean isWebElementVisible(By element){
         try {
             WebDriverWait wait=new WebDriverWait(driver,timeOut);
             wait.until(ExpectedConditions.visibilityOfElementLocated(element));
@@ -75,8 +75,8 @@ public class BasePage {
         }
     }
 
-    public void scrollToWebElement(By element,WebDriver driver){
-            waitUntilWebElementIsVisible(element, driver);
+    public void scrollToWebElement(By element){
+            waitUntilWebElementIsVisible(element);
             WebElement webElement = driver.findElement(element);
             Actions action = new Actions(driver);
             action.moveToElement(webElement).perform();
